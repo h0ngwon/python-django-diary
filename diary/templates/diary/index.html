@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>
+        <a href="{% url 'index' %}">Diary</a>
+    </h1>
+    <a href="{%url 'create'%}">Write new diary</a>
+    {% if diary_list %}
+    <ul>
+        {% for diary in diary_list %}
+        <li><a href="{%url 'detail' diary.id %}">{{diary.title_text}}</a>
+            {{diary.pub_date}}
+            <a href="{%url 'update' diary.id %}">modify</a>
+            <a href="{%url 'delete' diary.id %}">delete</a>
+        </li>
+        <br>
+        {% endfor %}
+        {%else%}
+        <p>No diarys are available.</p>
+        {% endif %}
+    </ul>
+</body>
+</html>

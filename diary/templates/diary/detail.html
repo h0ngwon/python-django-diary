@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>
+        <a href="{%url 'index' %}">Diary</a>
+    </h1>
+    <h2>{{diary.title_text}}</h2>
+    <h5>{{diary.pub_date}}</h5>
+    {{diary.context_text}}
+</body>
+</html>
